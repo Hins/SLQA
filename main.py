@@ -1,4 +1,8 @@
 from allennlp import commands
 
-commands.main()
+import sys
+
+print(len(sys.args))
+
+#commands.main()
 
