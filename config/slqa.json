@@ -38,6 +38,7 @@
       }
     }
   },
+  /*
   "iterator": {
     "type": "bucket",
     "batch_size": 2,
@@ -53,6 +54,7 @@
       ]
     ]
   },
+  */
   "model": {
     "type": "slqa",
     "dropout": 0.2,
@@ -133,6 +135,9 @@
       "allow_unmatched_keys": true
     }
   },
+  "data_loader": {
+    "batch_size": 32
+  },
   "train_data_path": "https://nlp.stanford.edu/data/coqa/coqa-train-v1.0.json",
   "validation_data_path": "https://nlp.stanford.edu/data/coqa/coqa-dev-v1.0.json",
   "trainer": {
@@ -144,11 +149,6 @@
       "patience": 3
     },
     "num_epochs": 30,
-    //    "optimizer": {
-    //      "type": "sgd",
-    //      "lr": 0.01,
-    //      "momentum": 0.9
-    //    },
     "optimizer": {
       "type": "adam",
       "lr": 2e-3,
@@ -159,7 +159,8 @@
     },
     "patience": 8,
     "validation_metric": "+f1"
-  },
+  }
+  /*
   "validation_iterator": {
     "type": "bucket",
     "batch_size": 3,
@@ -175,4 +176,5 @@
       ]
     ]
   }
+  */
 }
